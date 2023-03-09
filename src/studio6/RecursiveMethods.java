@@ -11,10 +11,13 @@ public class RecursiveMethods {
 	 * @return the sum of the first n terms of the geometric series (1/2 + 1/4 + 1/8
 	 *         ...)
 	 */
-	public static double geometricSum(int n) {
+	public static double geometricSum(double n) {
 		
-			// FIXME compute the geometric sum for the first n terms recursively
-			return 0;
+			if (n==0) {
+			return 0;}
+			else {
+				return Math.pow(0.5, n) + geometricSum(n-1);
+			}
 		
 	}
 
@@ -28,12 +31,21 @@ public class RecursiveMethods {
 	 */
 	public static int gcd(int p, int q) {
 		
-			// FIXME compute the gcd of p and q using recursion
-			return 0;
+			if (p%q==0) {
+				
+				return q;
+			}
+			else
+			{
+				return gcd(q, p%q);
+			}
+			
 		
 	}
 
 	
+
+
 
 	/**
 	 * This method uses recursion to create a reverse of the given array
@@ -41,10 +53,18 @@ public class RecursiveMethods {
 	 * @param array the array to create a reverse of, not to be mutated
 	 * @return an array with the same data as the input but it reverse order
 	 */
-	public static int[] toReversed(int[] array) {
+	public static int toReversed(int[] array) {
 		
-			// FIXME create a helper method that can recursively reverse the given array
-			return new int[0];
+			if (array.length==1) {
+				int[]reversed=new int[array.length];
+			return reversed[1];
+			}
+			else
+			{
+				int[]reversed=new int[array.length];
+				return reversed[array.length];
+					
+			}
 		
 	}
 
